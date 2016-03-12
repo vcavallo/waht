@@ -1,5 +1,3 @@
-require 'pry'
-
 class WahtParser
   attr_reader :source_code
   def initialize(waht_file)
@@ -23,28 +21,6 @@ class WahtRunner
   end
 end
 
-#class Wahtter
-  #attr_reader :source_code
-  #attr_reader :wahts_code
-
-  #def initialize(input)
-    #@input = input
-    #@source_code = ""
-    #@wahts_code = ""
-  #end
-
-  #def to_wahts
-    #@wahts_code = ""
-    #@input.split('').collect do |c|
-      #c.bytes.first.times do
-        #@wahts_code << "."
-      #end
-      #@wahts_code << "waht"
-    #end
-  #end
-
-#end
-
 class WahtPreparer
   attr_reader :wahts_code
   def initialize(ruby_file)
@@ -65,7 +41,4 @@ class WahtPreparer
   def create_waht_file
     File.open("waht.waht", "w") { |f| f.write(to_wahts) }
   end
-
 end
-
-binding.pry
